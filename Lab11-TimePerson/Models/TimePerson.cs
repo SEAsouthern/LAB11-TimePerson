@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Lab11_TimePerson.Models
 {
@@ -21,7 +22,15 @@ namespace Lab11_TimePerson.Models
         public static List<TimePerson> GetPersons(int begYear, int endYear)
         {
             // create a list of Time persons (instantiate a new list)
+            List<TimePerson> myList = new List<TimePerson>();
+
+            //Below possibly useless
+            //(new string[] {"Year", "Honor", "Name", "Country", "BirthYear", "DeathYear", "Title", "Catagory", "Context"});
+
+
             // get the path of your timeperson.csv file
+            string[] csvList = File.ReadAllLines("./wwwroot/personOfTheYear.csv");
+
             // getting the path is not as simple as ../../../ have to use 
             // the Path or Environment class
 
